@@ -86,12 +86,19 @@ The goal of this project is to demonstrate a complete working example of a full-
 
 - Project List with Actions  
 ![alt text](source/image.png)
+
 - Add Project  
 ![alt text](source/image-1.png)
+
+![alt text](source/image-2.png)
+
 - Edit Project
-![alt text](source/image-2.png)  
-- Project Details with Assigned Employees
 ![alt text](source/image-3.png)
+
+![alt text](source/image-4.png)
+
+- Project Details with Assigned Employees
+![alt text](source/image-5.png)
 
 ---
 
