@@ -84,10 +84,14 @@ The goal of this project is to demonstrate a complete working example of a full-
 
 > The screenshots below show some of the implemented UI components:
 
-- Project List with Status and Actions  
-- Add Project Form  
-- Edit Project Form  
+- Project List with Actions  
+![alt text](image.png)
+- Add Project  
+![alt text](image-1.png)
+- Edit Project
+![alt text](image-2.png)  
 - Project Details with Assigned Employees
+![alt text](image-3.png)
 
 ---
 
