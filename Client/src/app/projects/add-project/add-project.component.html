@@ -1,0 +1,23 @@
+<div class="form-wrapper">
+  <h2 class="title">➕ Add New Project</h2>
+
+  <form (ngSubmit)="addProject()" class="project-form">
+    <div class="form-group">
+      <label for="name">Project Name:</label>
+      <input type="text" id="name" [(ngModel)]="nameValue" name="name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status:</label>
+      <select id="status" [(ngModel)]="statusValue" name="status" required [ngClass]="statusValue.toLowerCase()">
+        <option value="ToDo">ToDo</option>
+        <option value="InProgress">InProgress</option>
+        <option value="Completed">Completed</option>
+      </select>
+    </div>
+
+    <div class="button-wrapper">
+      <button type="submit" class="add-btn">Create Project</button>
+    </div>
+  </form>
+</div>

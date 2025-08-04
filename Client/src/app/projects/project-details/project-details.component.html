@@ -1,0 +1,37 @@
+<div *ngIf="project() as proj" class="project-details-wrapper">
+  <h2 class="title">Project: {{ proj.Name }}</h2>
+
+  <p><strong>ID:</strong> {{ proj.Id }}</p>
+
+  <p>
+    <strong>Status:</strong>
+    <span class="status" [ngClass]="proj.Status.toLowerCase()">
+      {{ proj.Status }}
+    </span>
+  </p>
+
+  <h3>Employees:</h3>
+
+  <div class="table-wrapper">
+    <table class="project-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of proj.Employees">
+          <td>{{ emp.Id }}</td>
+          <td>{{ emp.FullName }}</td>
+          <td>{{ emp.Email }}</td>
+          <td>{{ emp.Role }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div *ngIf="!project()">Loading project details...</div>
