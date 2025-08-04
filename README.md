@@ -139,16 +139,26 @@ https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 https://git-scm.com/downloads
 
 7. VS Code Extensions:  
-- .NET Install Tool (by Microsoft)  
+- .NET Install Tool (by Microsoft) 
+
+![alt text](source/image-2.png)
+
 - C# (by Microsoft)  
+
+![alt text](source/image-4.png)
+
 - C# Dev Kit (by Microsoft)  
+
+![alt text](source/image-6.png)
+
 - Angular Language Service (by Angular)
 
+![alt text](source/image-7.png)
 
 ### II. Build the Project
 
 1. Clone the repository in VS Code:  
-https://github.com/RuslanPidhainyi/ITCorporation.git
+https://dmytrokiselyov0389@dev.azure.com/dmytrokiselyov0389/Dev%20Workshop%20DK/_git/Dev%20Workshop%20DK
 
 2. Install Angular CLI globally inside the Client directory (PowerShell terminal command
 
