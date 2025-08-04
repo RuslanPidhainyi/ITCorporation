@@ -99,3 +99,103 @@ The goal of this project is to demonstrate a complete working example of a full-
 - Automated tests
 - Real-world practices like stored procedures, REST APIs, and component-based frontend development.
 
+---
+
+## ☕️ Instructions for installing the application locally
+
+### I. Install Programs
+
+1. Download Visual Studio Code  
+https://code.visualstudio.com/download
+
+2. Download Node.js  
+https://nodejs.org/en/download
+
+2.1. Check if Node is installed (PowerShell terminal command):  
+
+``` node --version ```
+
+3. Download .NET SDK 9.0  
+https://dotnet.microsoft.com/en-us/download
+
+4. Download DBeaver  
+https://dbeaver.io/download/
+
+5. Download PostgreSQL Server  
+https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+
+6. Download Git  
+https://git-scm.com/downloads
+
+7. VS Code Extensions:  
+- .NET Install Tool (by Microsoft)  
+- C# (by Microsoft)  
+- C# Dev Kit (by Microsoft)  
+- Angular Language Service (by Angular)
+
+
+### II. Build the Project
+
+1. Clone the repository in VS Code:  
+https://github.com/RuslanPidhainyi/ITCorporation.git
+
+2. Install Angular CLI globally inside the Client directory (PowerShell terminal command
+
+``` npm install -g @angular/cli ```
+
+2.1. Check Angular dependencies inside the Client directory (PowerShell command):
+
+``` ng version ```
+
+3. Install dependencies inside the Client directory (PowerShell command):
+
+``` npm install ```
+
+5. If the Migrations folder exists inside API/Data, delete it.
+
+6. In DBeaver, create a new PostgreSQL database.
+
+7. Connect the database to the server by editing appsettings.json in the API directory:
+- Set the database name
+- Set the username
+- Set the password
+
+7. Run the first database migration (PowerShell terminal):
+
+7.1. Navigate to the backend (API directory):
+
+   ``` cd API ```
+   
+7.2. Initialize the migration; this will create a Migrations folder inside Data:
+
+``` dotnet ef migrations add InitialCreate --output-dir Data/Migrations ```
+
+7.3. Apply the migration to update the database:
+
+``` dotnet ef database update ```
+
+8. Seed the database:
+
+8.1. Use the SQL script found in the Database folder of the cloned project.
+
+8.2. In DBeaver, create a new SQL script file and paste the contents from the Database folder.
+
+8.3. Run the script to insert initial data (via INSERT INTO) required for the project to work properly.
+
+8.4. Also run the stored procedure script so the project works correctly.
+   
+III. Run the Project
+
+1. To run the backend server, navigate to the API directory and use this command:
+
+``` dotnet run ```
+
+2. Once the server is running, open Swagger in your browser:
+
+https://localhost:7067/swagger/index.html
+
+3. To run the frontend client, navigate to the Client directory and use the command:
+
+``` ng serve ``` or ``` npm run ```
+
+
