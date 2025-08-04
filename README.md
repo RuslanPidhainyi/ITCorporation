@@ -1,12 +1,26 @@
 # 🏢 ITCorporations — FullStack Web Application
 
-## 🎯 Project Objective
+## Contents 📋
+
+0. [Project Objective](#intro)
+1. [Technologies Used](#techn)
+2. [Implemented API Endpoints](#endpoints)
+3. [Backend Tests](#tests)
+4. [Frontend Features](#frontend_features)
+5. [UI Preview](#ui_preview)
+6. [Conclusion](#conclusion)
+7. [Instructions for installing the application locally](#init)
+
+
+<a name="intro"></a>
+## 0. Project Objective 🎯
 
 The goal of this project is to demonstrate a complete working example of a full-stack web application, including seamless interaction between frontend and backend, RESTful API communication, database operations (including stored procedures), and automated testing with both unit and integration coverage.
 
 ---
 
-## ⚙️ Technologies Used
+<a name="techn"></a>
+## 1. Technologies Used ⚙️
 
 ### 🔧 Backend
 - **ASP.NET Core 9**, **C#**
@@ -31,7 +45,8 @@ The goal of this project is to demonstrate a complete working example of a full-
 
 ---
 
-## 🔗 Implemented API Endpoints
+<a name="endpoints"></a>
+## 2. Implemented API Endpoints 🔗
 
 ### 👨‍💼 Employees
 
@@ -60,7 +75,8 @@ The goal of this project is to demonstrate a complete working example of a full-
 
 ---
 
-## 🧪 Backend Tests
+<a name="tests"></a>
+## 3. Backend Tests 🧪
 
 ### ✅ Unit Tests
 - `GetAllProjects_ReturnsAllProjects`
@@ -71,7 +87,8 @@ The goal of this project is to demonstrate a complete working example of a full-
 
 ---
 
-## 🖥️ Frontend Features
+<a name="frontend_features"></a>
+## 4. Frontend Features 🖥️
 
 - **Project List Page** — Displays all projects in a table format with actions to edit or delete.
 - **Add Project Page** — Form to create a new project with name and status fields.
@@ -80,7 +97,8 @@ The goal of this project is to demonstrate a complete working example of a full-
 
 ---
 
-## 📷 UI Preview
+<a name="ui_preview"></a>
+## 5. UI Preview 📷
 
 > The screenshots below show some of the implemented UI components:
 
@@ -102,7 +120,8 @@ The goal of this project is to demonstrate a complete working example of a full-
 
 ---
 
-## ✅ Conclusion
+<a name="conclusion"></a>
+## 6. Conclusion ✅
 
 **ITCorporations** is a complete example of a CRUD-based enterprise app that includes:
 - Full frontend-backend interaction
@@ -112,7 +131,8 @@ The goal of this project is to demonstrate a complete working example of a full-
 
 ---
 
-## ☕️ Instructions for installing the application locally
+<a name="init"></a>
+## 7. Instructions for installing the application locally ☕️
 
 ### I. Install Programs
 
