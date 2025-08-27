@@ -1,5 +1,7 @@
 # 🏢 ITCorporations — FullStack Web Application
 
+---
+
 ## Contents 📋
 
 0. [Project Objective](#intro)
@@ -11,6 +13,7 @@
 6. [Conclusion](#conclusion)
 7. [Instructions for installing the application locally](#init)
 
+---
 
 <a name="intro"></a>
 ## 0. Project Objective 🎯
