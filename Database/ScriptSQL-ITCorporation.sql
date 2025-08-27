@@ -203,6 +203,11 @@ LEFT JOIN "Employees" e ON e."Id" = ep."EmployeeId"
 LEFT JOIN "EmployeeDetails" ed ON e."Id" = ed."EmployeeId"
 ORDER BY p."Id", e."Id" ASC;
 
+
+INSERT INTO "Projects" ("Name", "Status") VALUES
+('ConvertorPDF', 'ToDo'),
+('Dia', 'InProgress');
+
 -- Display projects without employees, sorted by project ID in descending order using (LEFT JOIN)
 SELECT * FROM "Projects" p
 LEFT JOIN "Employee_Projects" ep ON p."Id" = ep."ProjectId"
@@ -263,11 +268,7 @@ $$;
 
 -- DROP PROCEDURE SP_Update_Project(INT, TEXT, TEXT);
 
-CALL SP_Update_Project(6, 'Updated Project', 'InProgress');
-
-SELECT * FROM "Projects" p WHERE p."Id" = 6;
-
-
+CALL SP_Update_Project(5, 'Updated Project', 'InProgress');
 
 -- Create new Employee
 CREATE PROCEDURE P_New_Project(
@@ -282,7 +283,7 @@ BEGIN
 END;
 $$;
 
---DROP PROCEDURE IF EXISTS P_New_Project(text, text);
+-- DROP PROCEDURE IF EXISTS P_New_Project(text, text);
 
 CALL P_New_Project('New AI Platform', 'InProgress');
 
@@ -307,7 +308,7 @@ WITH CTE_ProjectStatus AS (
 )
 SELECT
 "Status",
-count(*) AS "Count Project"
+COUNT(*) AS "Count Project"
 FROM CTE_ProjectStatus
 GROUP BY "Status"
 
@@ -329,3 +330,5 @@ COUNT(*) AS "Role Count"
 FROM CTE_ProjectRoles
 GROUP BY ProjectName, "Role"
 ORDER BY ProjectName, "Role";
+
+	
