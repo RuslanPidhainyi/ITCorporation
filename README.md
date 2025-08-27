@@ -7,12 +7,13 @@
 0. [Project Objective](#intro)
 1. [Technologies Used](#techn)
 2. [Diagrams](#diagrams)
-3. [Implemented API Endpoints](#endpoints)
-4. [Backend Tests](#tests)
-5. [Frontend Features](#frontend_features)
-6. [UI Preview](#ui_preview)
-7. [Conclusion](#conclusion)
-8. [Instructions for installing the application locally](#init)
+3. [Project architecture](#arch)
+4. [Implemented API Endpoints](#endpoints)
+5. [Backend Tests](#tests)
+6. [Frontend Features](#frontend_features)
+7. [UI Preview](#ui_preview)
+8. [Conclusion](#conclusion)
+9. [Instructions for installing the application locally](#init)
 
 ---
 
@@ -60,11 +61,130 @@ The goal of this project is to demonstrate a complete working example of a full-
 
 ![alt text](source/ERD.png)
 
+---
+
+<a name="arch"></a>
+## 3. Project architecture 📑
+
+```
+├── 📁 .git/ 🚫 (auto-hidden)
+├── 📁 .vscode/ 🚫 (auto-hidden)
+├── 📁 API/
+│   ├── 📁 Controllers/
+│   │   ├── 🟣 EmployeesController.cs
+│   │   └── 🟣 ProjectsController.cs
+│   ├── 📁 DTOs/
+│   │   ├── 🟣 CreateUpdateEmployeeDto.cs
+│   │   ├── 🟣 CreateUpdateProjectDto.cs
+│   │   ├── 🟣 EmployeeDto.cs
+│   │   ├── 🟣 ProjectDto.cs
+│   │   └── 🟣 ProjectWithEmployeesDto.cs
+│   ├── 📁 Data/
+│   │   └── 🟣 AppDbContext.cs
+│   ├── 📁 Entities/
+│   │   ├── 🟣 Employee.cs
+│   │   ├── 🟣 EmployeeDetails.cs
+│   │   ├── 🟣 Employee_Project.cs
+│   │   └── 🟣 Project.cs
+│   ├── 📁 Helpers/
+│   │   └── 🟣 AutoMapperProfile.cs
+│   ├── 📁 Interfaces/
+│   │   ├── 🟣 IEmployeeRepository.cs
+│   │   └── 🟣 IProjectRepository.cs
+│   ├── 📁 Properties/
+│   │   └── 📄 launchSettings.json
+│   ├── 📁 Repositories/
+│   │   ├── 🟣 EmployeeRepository.cs
+│   │   └── 🟣 ProjectRepository.cs
+│   ├── 🟣 API.csproj
+│   ├── 📄 API.http
+│   ├── 🟣 Program.cs
+│   ├── 📄 appsettings.Development.json
+│   └── 📄 appsettings.json
+├── 📁 API.Tests/
+│   ├── 📁 Integration/
+│   │   ├── 📁 Controller/
+│   │   │   └── 🟣 ProjectsControllerTests.cs
+│   │   └── 🟣 IntegrationTestClassBase.cs
+│   ├── 📁 Unit/
+│   │   ├── 📁 Controller/
+│   │   │   └── 🟣 ProjectsControllerTests.cs
+│   │   └── 🟣 UnitTestClassBase.cs
+│   ├── 🟣 API.Tests.csproj
+│   └── 🟣 MSTestSettings.cs
+├── 📁 Client/
+│   ├── 📁 .vscode/ 🚫 (auto-hidden)
+│   ├── 📁 src/
+│   │   ├── 📁 app/
+│   │   │   ├── 📁 _models/
+│   │   │   │   ├── 📄 employee.model.ts
+│   │   │   │   └── 📄 project.model.ts
+│   │   │   ├── 📁 _services/
+│   │   │   │   ├── 📄 employee.service.ts
+│   │   │   │   └── 📄 project.service.ts
+│   │   │   ├── 📁 projects/
+│   │   │   │   ├── 📁 add-project/
+│   │   │   │   │   ├── 🎨 add-project.component.css
+│   │   │   │   │   ├── 🌐 add-project.component.html
+│   │   │   │   │   └── 📄 add-project.component.ts
+│   │   │   │   ├── 📁 edit-project/
+│   │   │   │   │   ├── 🎨 edit-project.component.css
+│   │   │   │   │   ├── 🌐 edit-project.component.html
+│   │   │   │   │   └── 📄 edit-project.component.ts
+│   │   │   │   ├── 📁 project-details/
+│   │   │   │   │   ├── 🎨 project-details.component.css
+│   │   │   │   │   ├── 🌐 project-details.component.html
+│   │   │   │   │   └── 📄 project-details.component.ts
+│   │   │   │   └── 📁 project-list/
+│   │   │   │       ├── 🎨 project-list.component.css
+│   │   │   │       ├── 🌐 project-list.component.html
+│   │   │   │       └── 📄 project-list.component.ts
+│   │   │   ├── 🎨 app.component.css
+│   │   │   ├── 🌐 app.component.html
+│   │   │   ├── 📄 app.component.ts
+│   │   │   ├── 📄 app.config.ts
+│   │   │   └── 📄 app.routes.ts
+│   │   ├── 📁 assets/
+│   │   │   └── 📄 .gitkeep
+│   │   ├── 🖼️ favicon.ico
+│   │   ├── 🌐 index.html
+│   │   ├── 📄 main.ts
+│   │   └── 🎨 styles.css
+│   ├── 📄 .editorconfig
+│   ├── 🚫 .gitignore
+│   ├── 📖 README.md
+│   ├── 📄 angular.json
+│   ├── 📄 package-lock.json
+│   ├── 📄 package.json
+│   ├── 📄 tsconfig.app.json
+│   ├── 📄 tsconfig.json
+│   └── 📄 tsconfig.spec.json
+├── 📁 Database/
+│   ├── 🖼️ ERD-ITCorporationDb.png
+│   └── 🗄️ ScriptSQL-ITCorporation.sql
+├── 📁 Presentations/
+│   └── 📊 Presentation_Backend_Database.pptx
+├── 📁 source/
+│   ├── 🖼️ DiagramClass.png
+│   ├── 🖼️ ERD.png
+│   ├── 🖼️ image-1.png
+│   ├── 🖼️ image-2.png
+│   ├── 🖼️ image-3.png
+│   ├── 🖼️ image-4.png
+│   ├── 🖼️ image-5.png
+│   ├── 🖼️ image-6.png
+│   ├── 🖼️ image-7.png
+│   └── 🖼️ image.png
+├── 📄 .gitattributes
+├── 🚫 .gitignore
+├── 🟣 ITCorporation.sln
+└── 📖 README.md
+```
 
 ---
 
 <a name="endpoints"></a>
-## 3. Implemented API Endpoints 🔗
+## 4. Implemented API Endpoints 🔗
 
 ### 👨‍💼 Employees
 
@@ -94,7 +214,7 @@ The goal of this project is to demonstrate a complete working example of a full-
 ---
 
 <a name="tests"></a>
-## 4. Backend Tests 🧪
+## 5. Backend Tests 🧪
 
 ### ✅ Unit Tests
 - `GetAllProjects_ReturnsAllProjects`
@@ -106,7 +226,7 @@ The goal of this project is to demonstrate a complete working example of a full-
 ---
 
 <a name="frontend_features"></a>
-## 5. Frontend Features 🖥️
+## 6. Frontend Features 🖥️
 
 - **Project List Page** — Displays all projects in a table format with actions to edit or delete.
 - **Add Project Page** — Form to create a new project with name and status fields.
@@ -116,7 +236,7 @@ The goal of this project is to demonstrate a complete working example of a full-
 ---
 
 <a name="ui_preview"></a>
-## 6. UI Preview 📷
+## 7. UI Preview 📷
 
 > The screenshots below show some of the implemented UI components:
 
@@ -139,7 +259,7 @@ The goal of this project is to demonstrate a complete working example of a full-
 ---
 
 <a name="conclusion"></a>
-## 7. Conclusion ✅
+## 8 Conclusion ✅
 
 **ITCorporations** is a complete example of a CRUD-based enterprise app that includes:
 - Full frontend-backend interaction
@@ -150,7 +270,7 @@ The goal of this project is to demonstrate a complete working example of a full-
 ---
 
 <a name="init"></a>
-## 8. Instructions for installing the application locally ☕️
+## 9. Instructions for installing the application locally ☕️
 
 ### I. Install Programs
 
