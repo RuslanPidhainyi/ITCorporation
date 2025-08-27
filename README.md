@@ -6,12 +6,13 @@
 
 0. [Project Objective](#intro)
 1. [Technologies Used](#techn)
-2. [Implemented API Endpoints](#endpoints)
-3. [Backend Tests](#tests)
-4. [Frontend Features](#frontend_features)
-5. [UI Preview](#ui_preview)
-6. [Conclusion](#conclusion)
-7. [Instructions for installing the application locally](#init)
+2. [Diagrams](#diagrams)
+3. [Implemented API Endpoints](#endpoints)
+4. [Backend Tests](#tests)
+5. [Frontend Features](#frontend_features)
+6. [UI Preview](#ui_preview)
+7. [Conclusion](#conclusion)
+8. [Instructions for installing the application locally](#init)
 
 ---
 
@@ -41,15 +42,29 @@ The goal of this project is to demonstrate a complete working example of a full-
 - **Angular 17**
 - **HTML**, **TypeScript**, **CSS**
 
-### 👷Pattern
+### 👷Patterns
 - **Data Transfer Object**
 - **Repository**
 - **Client-Server Architecture**
 
 ---
 
+<a name="diagrams"></a>
+## 2. Diagrams 📊
+
+### Diagram Class (UML)
+
+![alt text](source/DiagramClass.png)
+ 
+### Entity–Relationship Diagram (ERD)
+
+![alt text](source/ERD.png)
+
+
+---
+
 <a name="endpoints"></a>
-## 2. Implemented API Endpoints 🔗
+## 3. Implemented API Endpoints 🔗
 
 ### 👨‍💼 Employees
 
@@ -79,7 +94,7 @@ The goal of this project is to demonstrate a complete working example of a full-
 ---
 
 <a name="tests"></a>
-## 3. Backend Tests 🧪
+## 4. Backend Tests 🧪
 
 ### ✅ Unit Tests
 - `GetAllProjects_ReturnsAllProjects`
@@ -91,7 +106,7 @@ The goal of this project is to demonstrate a complete working example of a full-
 ---
 
 <a name="frontend_features"></a>
-## 4. Frontend Features 🖥️
+## 5. Frontend Features 🖥️
 
 - **Project List Page** — Displays all projects in a table format with actions to edit or delete.
 - **Add Project Page** — Form to create a new project with name and status fields.
@@ -101,7 +116,7 @@ The goal of this project is to demonstrate a complete working example of a full-
 ---
 
 <a name="ui_preview"></a>
-## 5. UI Preview 📷
+## 6. UI Preview 📷
 
 > The screenshots below show some of the implemented UI components:
 
@@ -124,7 +139,7 @@ The goal of this project is to demonstrate a complete working example of a full-
 ---
 
 <a name="conclusion"></a>
-## 6. Conclusion ✅
+## 7. Conclusion ✅
 
 **ITCorporations** is a complete example of a CRUD-based enterprise app that includes:
 - Full frontend-backend interaction
@@ -135,7 +150,7 @@ The goal of this project is to demonstrate a complete working example of a full-
 ---
 
 <a name="init"></a>
-## 7. Instructions for installing the application locally ☕️
+## 8. Instructions for installing the application locally ☕️
 
 ### I. Install Programs
 
