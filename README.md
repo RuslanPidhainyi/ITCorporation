@@ -318,19 +318,29 @@ https://git-scm.com/downloads
 1. Clone the repository in VS Code:  
 https://dmytrokiselyov0389@dev.azure.com/dmytrokiselyov0389/Dev%20Workshop%20DK/_git/Dev%20Workshop%20DK
 
-2. Install Angular CLI globally inside the Client directory (PowerShell terminal command
+2. Go to the Client directory inside the project using the PowerShell command:
 
-``` npm install -g @angular/cli ```
-
-2.1. Check Angular dependencies inside the Client directory (PowerShell command):
-
-``` ng version ```
+``` cd Client ```
 
 3. Install dependencies inside the Client directory (PowerShell command):
 
 ``` npm install ```
 
+3.1. Check npm dependencies inside the Client directory (PowerShell command):
+
+``` npm -version ```
+
+4. Install Angular CLI globally inside the Client directory (PowerShell terminal command
+
+``` npm install -g @angular/cli ```
+
+4.1. Check Angular dependencies inside the Client directory (PowerShell command):
+
+``` ng version ```
+
 5. If the Migrations folder exists inside API/Data, delete it.
+
+![alt text](folder-migration.png)
 
 6. In DBeaver, create a new PostgreSQL database.
 
