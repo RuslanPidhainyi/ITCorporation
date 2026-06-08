@@ -47,6 +47,7 @@ The goal of this project is to demonstrate a complete working example of a full-
 - **Data Transfer Object**
 - **Repository**
 - **Client-Server Architecture**
+- **AAA**
 
 ---
 
