@@ -49,7 +49,12 @@ public class Program
                 options.SwaggerEndpoint("/openapi/v1.json", "api");
             });
         }
-        app.UseHttpsRedirection();
+        using (var scope = app.Services.CreateScope())
+        {
+            var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+            db.Database.Migrate();
+        }
+
         app.UseRouting();
         app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod()
         .WithOrigins("http://localhost:4200", "https://localhost:4200"));

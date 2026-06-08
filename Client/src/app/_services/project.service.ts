@@ -6,7 +6,7 @@ import { tap, switchMap } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class ProjectService {
   private http = inject(HttpClient);
-  private baseUrl = 'https://localhost:7067/api/projects';
+  private baseUrl = '/api/projects';
 
   // Signals
   projects = signal<Project[]>([]);
