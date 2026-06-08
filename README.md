@@ -73,76 +73,78 @@ The goal of this project is to demonstrate a complete working example of a full-
 <a name="arch"></a>
 ## 3. Project architecture 📑
 
+
 ```
-├── 📁 .git/ 🚫 (auto-hidden)
-├── 📁 .vscode/ 🚫 (auto-hidden)
-├── 📁 API/
-│   ├── 📁 Controllers/
-│   │   ├── 🟣 EmployeesController.cs
-│   │   └── 🟣 ProjectsController.cs
-│   ├── 📁 DTOs/
-│   │   ├── 🟣 CreateUpdateEmployeeDto.cs
-│   │   ├── 🟣 CreateUpdateProjectDto.cs
-│   │   ├── 🟣 EmployeeDto.cs
-│   │   ├── 🟣 ProjectDto.cs
-│   │   └── 🟣 ProjectWithEmployeesDto.cs
-│   ├── 📁 Data/
-│   │   └── 🟣 AppDbContext.cs
-│   ├── 📁 Entities/
-│   │   ├── 🟣 Employee.cs
-│   │   ├── 🟣 EmployeeDetails.cs
-│   │   ├── 🟣 Employee_Project.cs
-│   │   └── 🟣 Project.cs
-│   ├── 📁 Helpers/
-│   │   └── 🟣 AutoMapperProfile.cs
-│   ├── 📁 Interfaces/
-│   │   ├── 🟣 IEmployeeRepository.cs
-│   │   └── 🟣 IProjectRepository.cs
-│   ├── 📁 Properties/
-│   │   └── 📄 launchSettings.json
-│   ├── 📁 Repositories/
-│   │   ├── 🟣 EmployeeRepository.cs
-│   │   └── 🟣 ProjectRepository.cs
-│   ├── 🟣 API.csproj
+├── 📁 .github
+│   └── 📁 workflows
+├── 📁 API
+│   ├── 📁 Controllers
+│   │   ├── 📄 EmployeesController.cs
+│   │   └── 📄 ProjectsController.cs
+│   ├── 📁 DTOs
+│   │   ├── 📄 CreateUpdateEmployeeDto.cs
+│   │   ├── 📄 CreateUpdateProjectDto.cs
+│   │   ├── 📄 EmployeeDto.cs
+│   │   ├── 📄 ProjectDto.cs
+│   │   └── 📄 ProjectWithEmployeesDto.cs
+│   ├── 📁 Data
+│   │   └── 📄 AppDbContext.cs
+│   ├── 📁 Entities
+│   │   ├── 📄 Employee.cs
+│   │   ├── 📄 EmployeeDetails.cs
+│   │   ├── 📄 Employee_Project.cs
+│   │   └── 📄 Project.cs
+│   ├── 📁 Helpers
+│   │   └── 📄 AutoMapperProfile.cs
+│   ├── 📁 Interfaces
+│   │   ├── 📄 IEmployeeRepository.cs
+│   │   └── 📄 IProjectRepository.cs
+│   ├── 📁 Properties
+│   │   └── ⚙️ launchSettings.json
+│   ├── 📁 Repositories
+│   │   ├── 📄 EmployeeRepository.cs
+│   │   └── 📄 ProjectRepository.cs
+│   ├── 📄 API.csproj
 │   ├── 📄 API.http
-│   ├── 🟣 Program.cs
-│   ├── 📄 appsettings.Development.json
-│   └── 📄 appsettings.json
-├── 📁 API.Tests/
-│   ├── 📁 Integration/
-│   │   ├── 📁 Controller/
-│   │   │   └── 🟣 ProjectsControllerTests.cs
-│   │   └── 🟣 IntegrationTestClassBase.cs
-│   ├── 📁 Unit/
-│   │   ├── 📁 Controller/
-│   │   │   └── 🟣 ProjectsControllerTests.cs
-│   │   └── 🟣 UnitTestClassBase.cs
-│   ├── 🟣 API.Tests.csproj
-│   └── 🟣 MSTestSettings.cs
-├── 📁 Client/
-│   ├── 📁 .vscode/ 🚫 (auto-hidden)
-│   ├── 📁 src/
-│   │   ├── 📁 app/
-│   │   │   ├── 📁 _models/
+│   ├── 🐳 Dockerfile
+│   ├── 📄 Program.cs
+│   ├── ⚙️ appsettings.Development.json
+│   └── ⚙️ appsettings.json
+├── 📁 API.Tests
+│   ├── 📁 Integration
+│   │   ├── 📁 Controller
+│   │   │   └── 📄 ProjectsControllerTests.cs
+│   │   └── 📄 IntegrationTestClassBase.cs
+│   ├── 📁 Unit
+│   │   ├── 📁 Controller
+│   │   │   └── 📄 ProjectsControllerTests.cs
+│   │   └── 📄 UnitTestClassBase.cs
+│   ├── 📄 API.Tests.csproj
+│   └── 📄 MSTestSettings.cs
+├── 📁 Client
+│   ├── 📁 .angular
+│   ├── 📁 src
+│   │   ├── 📁 app
+│   │   │   ├── 📁 _models
 │   │   │   │   ├── 📄 employee.model.ts
 │   │   │   │   └── 📄 project.model.ts
-│   │   │   ├── 📁 _services/
+│   │   │   ├── 📁 _services
 │   │   │   │   ├── 📄 employee.service.ts
 │   │   │   │   └── 📄 project.service.ts
-│   │   │   ├── 📁 projects/
-│   │   │   │   ├── 📁 add-project/
+│   │   │   ├── 📁 projects
+│   │   │   │   ├── 📁 add-project
 │   │   │   │   │   ├── 🎨 add-project.component.css
 │   │   │   │   │   ├── 🌐 add-project.component.html
 │   │   │   │   │   └── 📄 add-project.component.ts
-│   │   │   │   ├── 📁 edit-project/
+│   │   │   │   ├── 📁 edit-project
 │   │   │   │   │   ├── 🎨 edit-project.component.css
 │   │   │   │   │   ├── 🌐 edit-project.component.html
 │   │   │   │   │   └── 📄 edit-project.component.ts
-│   │   │   │   ├── 📁 project-details/
+│   │   │   │   ├── 📁 project-details
 │   │   │   │   │   ├── 🎨 project-details.component.css
 │   │   │   │   │   ├── 🌐 project-details.component.html
 │   │   │   │   │   └── 📄 project-details.component.ts
-│   │   │   │   └── 📁 project-list/
+│   │   │   │   └── 📁 project-list
 │   │   │   │       ├── 🎨 project-list.component.css
 │   │   │   │       ├── 🌐 project-list.component.html
 │   │   │   │       └── 📄 project-list.component.ts
@@ -151,29 +153,33 @@ The goal of this project is to demonstrate a complete working example of a full-
 │   │   │   ├── 📄 app.component.ts
 │   │   │   ├── 📄 app.config.ts
 │   │   │   └── 📄 app.routes.ts
-│   │   ├── 📁 assets/
-│   │   │   └── 📄 .gitkeep
-│   │   ├── 🖼️ favicon.ico
+│   │   ├── 📁 assets
+│   │   │   └── ⚙️ .gitkeep
+│   │   ├── 📄 favicon.ico
 │   │   ├── 🌐 index.html
 │   │   ├── 📄 main.ts
 │   │   └── 🎨 styles.css
-│   ├── 📄 .editorconfig
-│   ├── 🚫 .gitignore
-│   ├── 📖 README.md
-│   ├── 📄 angular.json
-│   ├── 📄 package-lock.json
-│   ├── 📄 package.json
-│   ├── 📄 tsconfig.app.json
-│   ├── 📄 tsconfig.json
-│   └── 📄 tsconfig.spec.json
-├── 📁 Database/
+│   ├── ⚙️ .editorconfig
+│   ├── ⚙️ .gitignore
+│   ├── 🐳 Dockerfile
+│   ├── 📝 README.md
+│   ├── ⚙️ angular.json
+│   ├── ⚙️ nginx.conf
+│   ├── ⚙️ package-lock.json
+│   ├── ⚙️ package.json
+│   ├── ⚙️ tsconfig.app.json
+│   ├── ⚙️ tsconfig.json
+│   └── ⚙️ tsconfig.spec.json
+├── 📁 Database
 │   ├── 🖼️ ERD-ITCorporationDb.png
-│   └── 🗄️ ScriptSQL-ITCorporation.sql
-├── 📁 Presentations/
-│   └── 📊 Presentation_Backend_Database.pptx
-├── 📁 source/
+│   └── 📄 ScriptSQL-ITCorporation.sql
+├── 📁 Presentations
+│   ├── 📄 Presentation_Backend_Database - (Eng.).pptx
+│   └── 📄 Presentation_Backend_Database.pptx
+├── 📁 source
 │   ├── 🖼️ DiagramClass.png
 │   ├── 🖼️ ERD.png
+│   ├── 🖼️ folder-migration.png
 │   ├── 🖼️ image-1.png
 │   ├── 🖼️ image-2.png
 │   ├── 🖼️ image-3.png
@@ -182,10 +188,11 @@ The goal of this project is to demonstrate a complete working example of a full-
 │   ├── 🖼️ image-6.png
 │   ├── 🖼️ image-7.png
 │   └── 🖼️ image.png
-├── 📄 .gitattributes
-├── 🚫 .gitignore
-├── 🟣 ITCorporation.sln
-└── 📖 README.md
+├── ⚙️ .gitattributes
+├── ⚙️ .gitignore
+├── 📄 ITCorporation.sln
+├── 📝 README.md
+└── ⚙️ docker-compose.yml
 ```
 
 ---
