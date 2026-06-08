@@ -47,8 +47,14 @@ The goal of this project is to demonstrate a complete working example of a full-
 - **Data Transfer Object**
 - **Repository**
 - **Client-Server Architecture**
-- **AAA**
+- **Arrange, Act, Assert**
 
+### 🩻 Tests
+- **Unit test**
+- **Intrgration test**
+
+### 📦 Containerization
+- **Docker**
 ---
 
 <a name="diagrams"></a>
