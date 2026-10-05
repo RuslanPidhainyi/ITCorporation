@@ -331,4 +331,154 @@ FROM CTE_ProjectRoles
 GROUP BY ProjectName, "Role"
 ORDER BY ProjectName, "Role";
 
+-------------------------------------------------------------------------------------
+
+
+/*select + from*/
+select * from "Employees" e 
+select * from "Projects" p 
+
+/*JOINs*/
+
+/*inner join*/
+select * from "Employees" e
+inner join "EmployeeDetails" ed on e."Id" = ed."Id" 
+
+/*Left join*/
+select * from "Projects" p 
+Left join "Employee_Projects" ep on p."Id" = ep."ProjectId" 
+Left join "Employees" e on ep."EmployeeId"  = e."Id" 
+where p."Name" = 'Travel App'
+
+/*Right join*/
+select * from "Projects" p 
+Right join "Employee_Projects" ep on p."Id" = ep."ProjectId" 
+Right join "Employees" e on ep."EmployeeId"  = e."Id" 
+where p."Name" = 'Travel App'
+
+/*FULL join*/
+select * from "Projects" p 
+FULL join "Employee_Projects" ep on p."Id" = ep."ProjectId" 
+FULL join "Employees" e on ep."EmployeeId"  = e."Id" 
+
+/*Where*/
+select * from "Projects" p 
+full join "Employee_Projects" ep on p."Id" = ep."ProjectId" 
+full join "Employees" e on ep."EmployeeId" = e."Id" 
+full join "EmployeeDetails" ed on e."Id" = ed."Id"
+where p."Status" like 'In%' and e."LastName" is null 
+
+select * from "Projects" p 
+right join "Employee_Projects" ep on p."Id" = ep."ProjectId"
+left join "Employees" e on ep."EmployeeId"  = e."Id" 
+where e."LastName" 
+
+/*group by + agg*/
+
+--ex1
+select e."Id", e."FirstName" , e."LastName" , ep."ProjectId"  
+FROM "Employees" e
+JOIN "Employee_Projects" ep ON ep."EmployeeId" = e."Id"
+
+select e."Id", e."FirstName" , e."LastName" , 
+count(ep."ProjectId")  
+FROM "Employees" e
+JOIN "Employee_Projects" ep ON ep."EmployeeId" = e."Id"
+group by e."Id", e."LastName"
+
+select e."Id", e."FirstName" , e."LastName" , count(ep."ProjectId")  as "Count Projects"
+FROM "Employees" e
+JOIN "Employee_Projects" ep ON ep."EmployeeId" = e."Id"
+group by e."Id", e."LastName"
+order by e."LastName" desc 
+limit 1
+
+--ex2
+select * from "Projects" p 
+right join "Employee_Projects" ep on p."Id" = ep."ProjectId" 
+left join "Employees" e on ep."EmployeeId" = e."Id" 
+left join "EmployeeDetails" ed on e."Id" = ed."Id" 
+
+select p."Name", ed."Role"
+from "Projects" p 
+right join "Employee_Projects" ep on p."Id" = ep."ProjectId" 
+left join "Employees" e on ep."EmployeeId" = e."Id" 
+left join "EmployeeDetails" ed on e."Id" = ed."Id" 
+group by p."Name", ed."Role"
+order by p."Name" asc, 
+	case ed."Role" 
+		when 'Team Lead' then 1
+		when 'Designer' then 2
+		when 'Developer' then 3
+		when 'QA' then 4
+	end
+
 	
+	
+select p."Name", ed."Role",
+count(e."LastName")
+from "Projects" p 
+right join "Employee_Projects" ep on p."Id" = ep."ProjectId" 
+left join "Employees" e on ep."EmployeeId" = e."Id" 
+left join "EmployeeDetails" ed on e."Id" = ed."Id" 
+group by p."Name", ed."Role"
+order by p."Name" asc, 
+	case ed."Role" 
+		when 'Team Lead' then 1
+		when 'Designer' then 2
+		when 'Developer' then 3
+		when 'QA' then 4
+	end
+
+	
+	
+select p."Name", ed."Role",
+count(e."LastName"),
+SUM(count(e."LastName")) OVER (PARTITION BY p."Name") AS "PeopleOnProject" 
+from "Projects" p 
+right join "Employee_Projects" ep on p."Id" = ep."ProjectId" 
+left join "Employees" e on ep."EmployeeId" = e."Id" 
+left join "EmployeeDetails" ed on e."Id" = ed."Id" 
+group by p."Name", ed."Role"
+order by p."Name" asc, 
+	case ed."Role" 
+		when 'Team Lead' then 1
+		when 'Designer' then 2
+		when 'Developer' then 3
+		when 'QA' then 4
+	end
+	
+
+/*having*/
+	
+--ex1	
+select p."Name",
+count(e."Id") 
+from "Projects" p 
+left join "Employee_Projects" ep on p."Id" = ep."ProjectId" 
+left join "Employees" e on ep."EmployeeId"  = e."Id" 
+where e."Id"  is not null
+group by p."Name"
+
+select p."Name",
+count(e."Id") 
+from "Projects" p 
+left join "Employee_Projects" ep on p."Id" = ep."ProjectId" 
+left join "Employees" e on ep."EmployeeId"  = e."Id" 
+where e."Id"  is not null
+group by p."Name"
+having count(e."Id") >= 4
+	
+/*order by*/
+select * from "Projects" p 
+order by p."Name" asc 
+
+select * from "Projects" p 
+order by p."Name" desc 
+
+--WYRAZENIE TABELOWE:
+/*function*/
+/*Expression CTE*/
+/*Recursive CTE*/
+/*View*/
+/*Procedure*/

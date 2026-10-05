@@ -22,7 +22,16 @@ public class Program
         });
 
         //INFO: config Swagger
-        builder.Services.AddOpenApi();
+        builder.Services.AddOpenApi(options =>
+        {
+            //INFO: no "servers" in the document -> Swagger UI calls the API on the origin it was opened from
+            //(otherwise in Docker it points to the internal Kestrel address http://[::]:8080)
+            options.AddDocumentTransformer((document, context, cancellationToken) =>
+            {
+                document.Servers?.Clear();
+                return Task.CompletedTask;
+            });
+        });
 
         //INFO: config for bd
         builder.Services.AddDbContext<AppDbContext>(options =>
